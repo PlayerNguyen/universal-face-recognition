@@ -35,7 +35,7 @@ class Input():
     while(True): 
       
       _, frame = vid.read() 
-      cv2.imshow('Capturing sample face for inference', frame) 
+      # cv2.imshow('Capturing sample face for inference', frame) 
       
       cropped_frame = cv2.resize(frame, (80, 80))
       

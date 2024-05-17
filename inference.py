@@ -68,7 +68,7 @@ class Inference:
     while True:
       ret, frame = video.read(0)
       if ret is True:
-        cv2.imshow("Check attendance", frame)
+        # cv2.imshow("Check attendance", frame)
         frame = cv2.resize(frame, (160, 160))
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         image = Image.fromarray(frame)
