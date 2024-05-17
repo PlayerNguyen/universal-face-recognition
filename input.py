@@ -5,6 +5,7 @@ from os.path import join as path_join
 from pathlib import Path
 from torch import Tensor, save as torch_save
 from models import FacenetPipeline
+from typing import List
 
 class Input():
   
@@ -55,7 +56,7 @@ class Input():
     del model
     return arr
 
-  def __serialize_tensor_to_file__(self, name: str, tensors: list[Tensor]):
+  def __serialize_tensor_to_file__(self, name: str, tensors: List[Tensor]):
     _pathname = path_join(self.directory.name, name)
     
     # If not exists, make it
