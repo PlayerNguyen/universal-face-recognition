@@ -41,6 +41,7 @@ class Input():
       cropped_frame = cv2.resize(frame, (80, 80))
       
       result = model(cropped_frame)
+      print(result)
       if result is not None:
         image, _ = result
         arr.append(image)
