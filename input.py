@@ -38,14 +38,15 @@ class Input():
       _, frame = vid.read() 
       # cv2.imshow('Capturing sample face for inference', frame) 
       
-      cropped_frame = cv2.resize(frame, (80, 80))
+      if frame is not None:
+        cropped_frame = cv2.resize(frame, (80, 80))
       
-      result = model(cropped_frame)
-      print(result)
-      if result is not None:
-        image, _ = result
-        arr.append(image)
-        curr = curr + 1
+        result = model(cropped_frame)
+        print(result)
+        if result is not None:
+          image, _ = result
+          arr.append(image)
+          curr = curr + 1
       
       if cv2.waitKey(1) & 0xFF == ord('q') or curr >= 10: 
           break
