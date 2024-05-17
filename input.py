@@ -38,9 +38,10 @@ class Input():
       _, frame = vid.read() 
       # cv2.imshow('Capturing sample face for inference', frame) 
       
+      print(frame)
       if frame is not None:
         cropped_frame = cv2.resize(frame, (80, 80))
-      
+
         result = model(cropped_frame)
         print(result)
         if result is not None:
